@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Download File</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0; /* Menghapus margin default */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem; /* Ukuran font lebih besar */
+            text-transform: uppercase; /* Mengubah semua huruf menjadi kapital */
+            letter-spacing: 2px; /* Jarak antar huruf */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan teks */
+            margin: 0; /* Menghapus margin default */
+            padding: 20px; /* Memberikan padding */
+            background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan */
+            border-radius: 10px; /* Sudut yang membulat */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan kotak */
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Anda Mendapatkan Vocher Untuk Berbelanja Di Booth V&P by florina</h1>
+
+    <script>
+        // Ganti 'path/to/your/file.txt' dengan path file yang ingin diunduh
+        const fileUrl = 'assets/vocher.png'; 
+
+        // Fungsi untuk mengunduh file
+        function downloadFile(url) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = ''; // Nama file akan diambil dari URL
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Memanggil fungsi download setelah halaman dimuat
+        window.onload = function() {
+            downloadFile(fileUrl);
+        };
+    </script>
+</body>
+</html>
